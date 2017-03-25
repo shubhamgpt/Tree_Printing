@@ -91,6 +91,15 @@ int main()
     head->r->l = new node(2);
     head->r->r = new node(1);
 
+    head->l->l->l = new node(1);
+    head->l->l->r = new node(3);
+    head->l->r->l = new node(3);
+    head->l->r->r = new node(4);
+    head->r->l->l = new node(4);
+    head->r->l->r = new node(3);
+    head->r->r->l = new node(3);
+    head->r->r->r = new node(1);
+
     tree::printer(head);
 
     return 0;
