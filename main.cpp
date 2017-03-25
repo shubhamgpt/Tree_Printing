@@ -80,7 +80,25 @@ namespace tree {
 int main()
 {
     typedef tree::node<int> node;
-
+//    node* temp, temp_l, temp_r;
+//    int in_levels;
+//
+//    std::cin >> in_levels;
+//
+//    if(in_height == 0)
+//    {
+//        std::cout << "Error: Input should be more than zero!!" << std::endl;
+//        return 0;
+//    }
+//
+//
+//
+//    temp = head;
+//    for(int i=1; i <= in_levels; i++)
+//    {
+//
+//    }
+//
     node* head = new node(1);
 
     head->l    = new node(1);
