@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Git_Clone/NeuroScouting/Tree_Printing/main.cpp
+iostream
+-
+utility
+-
+algorithm
+-
+list
+-
+
