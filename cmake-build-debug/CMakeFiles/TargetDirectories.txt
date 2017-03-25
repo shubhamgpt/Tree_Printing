@@ -1,0 +1,3 @@
+C:/Git_Clone/NeuroScouting/Tree_Printing/cmake-build-debug/CMakeFiles/Tree_Printing.dir
+C:/Git_Clone/NeuroScouting/Tree_Printing/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Git_Clone/NeuroScouting/Tree_Printing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
