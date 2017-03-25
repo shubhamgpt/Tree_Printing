@@ -58,6 +58,10 @@ namespace tree {
             {
                 sprintf(temp, " %*s%d%*s", offset, " ", nd.n->data, offset, " ");
             }
+            else
+            {
+                sprintf(temp, " %*s", offset << 1, " ");
+            }
 
             std::cout << temp;
 
