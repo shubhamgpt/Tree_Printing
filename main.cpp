@@ -67,6 +67,7 @@ namespace tree {
                 node_list.push_back(node_depth(nd.n->r, last_lvl + 1));
             }
 
+            node_list.pop_front();
         }
     }
 
