@@ -2,6 +2,8 @@
 #include <utility>
 #include <algorithm>
 #include <list>
+#include <vector>
+#include <math.h>
 
 namespace tree {
 
@@ -80,26 +82,63 @@ namespace tree {
 int main()
 {
     typedef tree::node<int> node;
-//    node* temp, temp_l, temp_r;
-//    int in_levels;
-//
-//    std::cin >> in_levels;
-//
-//    if(in_height == 0)
-//    {
-//        std::cout << "Error: Input should be more than zero!!" << std::endl;
-//        return 0;
-//    }
-//
-//
-//
-//    temp = head;
-//    for(int i=1; i <= in_levels; i++)
-//    {
-//
-//    }
-//
+
     node* head = new node(1);
+    //node* temp, temp_l, temp_r;
+
+
+    int in_height;
+
+    std::vector<int> nodeVecTemp1, nodeVecTemp2, nodeVector;
+
+    std::cin >> in_height;
+
+    if(in_height == 0)
+    {
+        std::cout << "Error: Input should be more than zero!!" << std::endl;
+        return 0;
+    }
+    else if(in_height >= 1)
+    {
+        nodeVecTemp1.push_back(1);
+
+        for(int j=1; j<=in_height; j++) {   //iterate over levels
+
+            for (int i = 0; i < pow(2, double(j - 1)); i++) {   //iterate in level for each value
+
+                if (i % 2 == 0) {   //check for i'th is position value is even/odd
+                    if(i == 0)  //check for left boundary
+                        nodeVecTemp2.push_back((nodeVecTemp1[i]));
+                    else
+                        nodeVecTemp2.push_back((nodeVecTemp1[i-1] + nodeVecTemp1[i-2]));
+                }
+                else {
+                    if(i == (pow(2, double(j - 1))-1))  //check for right boundary
+                        nodeVecTemp2.push_back((nodeVecTemp1[i-1]));
+                    else
+                        nodeVecTemp2.push_back((nodeVecTemp1[i-1] + nodeVecTemp1[i]));
+                }
+
+            }
+            for(int k=0; k<nodeVecTemp2.size();k++) {
+                nodeVector.push_back(nodeVecTemp2[k]);  //passing values to master array
+            }
+            nodeVecTemp1 = nodeVecTemp2;    //shifting temp1 to next level of temp2
+            nodeVecTemp2.clear();   //cleaning temp2 to create next level
+        }
+    }
+
+//    for(int i=0; i<nodeVecTemp2.size();i++) {
+//        nodeVector.push_back(nodeVecTemp2[i]);
+//    }
+
+    std::cout<<"size= "<<nodeVector.size()<<std::endl;
+
+    for(int i=0; i<nodeVector.size();i++){
+        std::cout << nodeVector[i] << " ";
+    }
+    std::cout<<std::endl;
+
 
     head->l    = new node(1);
     head->r    = new node(1);
